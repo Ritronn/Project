@@ -23,6 +23,8 @@ This project is a visual journey through sustainability efforts — combining sm
 - 🌈 Gradient background sections with clean transitions
 - 🚀 Deployed via GitHub Pages
 
+  AI uses - ChatGPT
+
 ---
 
 ## 📁 Folder Structure
