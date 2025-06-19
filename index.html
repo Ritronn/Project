@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustainability Snapshot</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .horizontal-scroll-wrapper {
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      max-width: 100%;
+    }
+    .horizontal-scroll-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .horizontal-card {
+      scroll-snap-align: start;
+    }
+    .cursor-dot,
+    .cursor-aura {
+      position: fixed;
+      pointer-events: none;
+      border-radius: 50%;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+    .cursor-dot {
+      
+    }
+    .cursor-aura {
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, rgba(0,255,130,0.4) 0%, rgba(0,255,130,0) 60%);
+      
+    }
+    .cursor-aura {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(0,255,130,0.25) 0%, rgba(0,255,130,0) 70%);
+  
+}
+
+  </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+  <div class="cursor-aura" id="cursor-aura"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative h-screen w-full bg-cover bg-center flex items-center justify-center"
+           style="background-image: url('assets/images/hero.jpg');">
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0f172a]/80 to-[#0f172a]/90 z-0"></div>
+
+    <!-- Hero Title -->
+    <h1 id="hero-title"
+        class="text-5xl md:text-6xl font-bold transition-all duration-[1200ms] ease-out z-10">
+      Towards a Greener Tomorrow
+    </h1>
+  </section>
+
+  <!-- GRAPH SECTION -->
+  <section class="min-h-screen px-6 py-20 space-y-12 bg-black text-white">
+    <h2 class="text-3xl font-bold text-center mb-10">Sustainability Metrics</h2>
+
+    <!-- Graph 1 -->
+    <div class="max-w-3xl mx-auto">
+      <h3 class="text-xl font-semibold mb-2">🌳 Tree Plantation</h3>
+      <div class="w-full bg-gray-700 h-4 rounded">
+        <div class="bg-green-500 h-4 rounded transition-all duration-[2000ms] ease-in-out" style="width: 0%;" data-bar="80"></div>
+      </div>
+    </div>
+
+    <!-- Graph 2 -->
+    <div class="max-w-3xl mx-auto">
+      <h3 class="text-xl font-semibold mb-2">☀️ Renewable Energy Usage</h3>
+      <div class="w-full bg-gray-700 h-4 rounded">
+        <div class="bg-yellow-400 h-4 rounded transition-all duration-[2000ms] ease-in-out" style="width: 0%;" data-bar="65"></div>
+      </div>
+    </div>
+
+    <!-- Graph 3 -->
+    <div class="max-w-3xl mx-auto">
+      <h3 class="text-xl font-semibold mb-2">🌿 Carbon Emission Reduction</h3>
+      <div class="w-full bg-gray-700 h-4 rounded">
+        <div class="bg-blue-400 h-4 rounded transition-all duration-[2000ms] ease-in-out" style="width: 0%;" data-bar="55"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING QUOTE + SCROLLING CARDS COMBINED -->
+  <section class="relative min-h-screen bg-gradient-to-b from-[#166534] to-[#052e16] overflow-hidden flex flex-col items-center justify-center">
+    <!-- Quote + Cards Container -->
+    <div class="w-full flex flex-col items-center justify-center">
+      <!-- Floating Quote -->
+      <h2 id="floating-quote" class="w-full px-4 md:px-10 text-4xl md:text-5xl font-semibold text-center opacity-100 transition-opacity duration-1000 mb-10">
+        "The Earth is what we all have in common."
+      </h2>
+
+      <!-- Horizontal Cards -->
+      <div id="testimonial-cards" class="horizontal-scroll-wrapper px-4 md:px-10 py-10 flex gap-8 hidden justify-start">
+        <!-- Card 1 -->
+        <div class="horizontal-card shrink-0 bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-sm min-w-[300px] text-white mt-0">
+          <p class="mb-4">“I run a small eco-store and Amzigo shows me progress without me needing to check daily.”</p>
+          <span class="text-sm text-gray-300">– Sophie Wilson</span>
+        </div>
+        <!-- Card 2 -->
+        <div class="horizontal-card shrink-0 bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-sm min-w-[300px] text-white mt-10">
+          <p class="mb-4">“Their reporting helps me focus more on my plantation goals, not the paperwork.”</p>
+          <span class="text-sm text-gray-300">– Daniel Carter</span>
+        </div>
+        <!-- Card 3 -->
+        <div class="horizontal-card shrink-0 bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-sm min-w-[300px] text-white mt-5">
+          <p class="mb-4">“This helped our NGO shift to 90% renewable energy last year.”</p>
+          <span class="text-sm text-gray-300">– Anita Das</span>
+        </div>
+        <!-- Card 4 -->
+        <div class="horizontal-card shrink-0 bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-sm min-w-[300px] text-white mt-12">
+          <p class="mb-4">“We now monitor our energy usage in real time with their dashboard.”</p>
+          <span class="text-sm text-gray-300">– Li Zhang</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Scroll fade-out and show cards in-place
+    window.addEventListener('scroll', () => {
+      const quote = document.getElementById('floating-quote');
+      const cards = document.getElementById('testimonial-cards');
+      const quoteRect = quote.getBoundingClientRect();
+
+      if (quoteRect.top < window.innerHeight / 2) {
+        quote.classList.add('opacity-0');
+        setTimeout(() => {
+          quote.style.display = 'none';
+          cards.classList.remove('hidden');
+        }, 700);
+      }
+    });
+
+    // Cursor glowing aura effect
+    const dot = document.getElementById('cursor-dot');
+    const aura = document.getElementById('cursor-aura');
+
+    window.addEventListener('mousemove', (e) => {
+      dot.style.top = `${e.clientY}px`;
+      dot.style.left = `${e.clientX}px`;
+      aura.style.top = `${e.clientY}px`;
+      aura.style.left = `${e.clientX}px`;
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

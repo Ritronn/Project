@@ -1,0 +1,13 @@
+/* Fade-in effect */
+.fade-in-on-load {
+  opacity: 0;
+}
+body.loaded .fade-in-on-load {
+  opacity: 1;
+}
+.horizontal-card {
+  scroll-snap-align: start;
+  white-space: normal;         /* ✅ Allows text to wrap */
+  word-wrap: break-word;       /* ✅ Prevents long words from overflowing */
+  overflow-wrap: break-word;
+}
